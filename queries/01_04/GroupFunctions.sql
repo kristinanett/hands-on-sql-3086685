@@ -1,3 +1,5 @@
+-- Multiple row functions
+
 --Sum of all salaries
 SELECT SUM(salary) FROM emp_tab;
 
@@ -16,7 +18,7 @@ SELECT MIN(name),MAX(name) FROM emp_tab;
 --The number of rows in the table
 SELECT COUNT(*) FROM emp_tab;
 
---The number of employees reporting to manager 7003
+--The number of employees reporting to manager 7003 (name can be any column)
 SELECT COUNT(name) FROM emp_tab 
 WHERE manager=7003;
 
@@ -26,7 +28,7 @@ SELECT COUNT(DISTINCT(empno)) FROM emp_tab;
 --Sorts the highest salaries under every manager in descending order
 SELECT MAX(salary),manager 
 FROM emp_tab 
-GROUP BY manager 
+GROUP BY manager
 ORDER BY MAX(salary) DESC;
 
 --Returns an error as group functions cannot be given in WHERE condition
