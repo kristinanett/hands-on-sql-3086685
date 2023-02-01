@@ -1,3 +1,5 @@
+-- Single row conditional functions: CASE function
+
 SELECT name,job,salary,
 CASE job WHEN 'MANAGER' THEN 1.20*salary
          WHEN 'ANALYST' THEN 1.15*salary
